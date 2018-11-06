@@ -23,15 +23,17 @@ function GENERATE_PROJECT {
 		RUN_BG chmod -c +x "./gen_misc.sh"
 		RUN_BG touch "./user/user_main.c"
 		RUN_BG touch "./include/user_config.h"
-		RUN_BG git init
 	elif [ "$PROJECT_SDK" = "RTOS" ]; then
 		PROJECT_DIR="${BASE_DIR}ESP8266_RTOS_SDK/projects/$PROJECT_NAME"
 		[[ ! -f "$PROJECT_DIR/Makefile" ]] || return 0
 		RUN_BG cp -rv "${BASE_DIR}ESP8266_RTOS_SDK/examples/get-started/project_template/" "$PROJECT_DIR"
 		RUN_BG rm -v "$PROJECT_DIR/readme.txt"
 		RUN_BG cd "$PROJECT_DIR"
-		RUN_BG git init
 	fi
+	RUN_BG git init
+	RUN_BG wget -O .gitignore "https://www.gitignore.io/api/linux,vim,git,osx,c,c++"
+	RUN_BG git add .
+	RUN_BG git commit -m "Initial commit"
 }
 
 case $1 in

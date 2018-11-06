@@ -36,7 +36,8 @@ All command are aviable for both SDKs RTOS and NONOS(non os).
  3. Generate required directory structure for the new project
  4. Copy all required Makefiles and so on
  5. Run `git init` inside of the new create project
- 6. All things the `run` command does
+ 6. Get a proper `.gitignore` and make initial commit
+ 7. All things the `run` command does
 
 
 ## USAGE
