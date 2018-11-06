@@ -17,6 +17,9 @@ function GENERATE_PROJECT {
 		RUN_BG mkdir -pv "$PROJECT_DIR/user"
 		RUN_BG cp -Lv "${BASE_DIR}ESP8266_NONOS_SDK/examples/at/Makefile" "$PROJECT_DIR/"
 		RUN_BG cp -Lv "${BASE_DIR}ESP8266_NONOS_SDK/examples/at/user/Makefile" "$PROJECT_DIR/user"
+		RUN_BG cp -Lv "${BASE_DIR}ESP8266_NONOS_SDK/examples/at/gen_misc.sh" "$PROJECT_DIR/"
+		RUN_BG chmod -c -x "$PROJECT_DIR/Makefile"
+		RUN_BG chmod -c +x "$PROJECT_DIR/gen_misc.sh"
 		RUN_BG touch "$PROJECT_DIR/user/user_main.c"
 	elif [ "$PROJECT_SDK" = "RTOS" ]; then
 		PROJECT_DIR="${BASE_DIR}ESP8266_RTOS_SDK/projects/$PROJECT_NAME"
