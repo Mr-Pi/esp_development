@@ -10,7 +10,7 @@ case $1 in
 		;;
 	*)
 		PROJECT_NAME="$1"
-		START_NONOS
+		START_RTOS
 		;;
 esac
 $SHELL

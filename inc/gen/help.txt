@@ -2,7 +2,7 @@ Generate a project named like the last argument and
 starts a shell with all required environment variables exported.
 
 You can specify which SDK should be used by following arguments:
-   \e[1m-r\e[0m | \e[1m--rtos\e[0m to start and change to the ESP8266_RTOS_SDK
-   \e[1m-n\e[0m | \e[1m--noos\e[0m to start and change to the ESP8266_NONOS_SDK
+   \e[1m-r\e[0m | \e[1m--rtos\e[0m to use the official ESP8266_RTOS_SDK
+   \e[1m-n\e[0m | \e[1m--noos\e[0m to use the official the ESP8266_NONOS_SDK
 
-\e[1m-noos\e[0m is the Default
+\e[1m--rtos\e[0m is the Default

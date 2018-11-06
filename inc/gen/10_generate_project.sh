@@ -44,7 +44,7 @@ case $1 in
 		PROJECT_NAME "$2"
 		;;
 	*)
-		PROJECT_SDK="NONOS"
+		PROJECT_SDK="RTOS"
 		PROJECT_NAME "$1"
 		;;
 esac

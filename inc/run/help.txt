@@ -5,4 +5,4 @@ You can specify which SDK should be used by following arguments:
    \e[1m-r\e[0m | \e[1m--rtos\e[0m to start and change to the ESP8266_RTOS_SDK
    \e[1m-n\e[0m | \e[1m--noos\e[0m to start and change to the ESP8266_NONOS_SDK
 
-\e[1m-noos\e[0m is the Default
+\e[1m--rtos\e[0m is the Default
