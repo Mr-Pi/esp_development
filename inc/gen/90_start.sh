@@ -6,4 +6,4 @@ case "$PROJECT_SDK" in
 		START_NONOS
 		;;
 esac
-zsh
+$SHELL

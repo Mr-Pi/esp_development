@@ -14,4 +14,4 @@ case $1 in
 		START_NONOS
 		;;
 esac
-zsh
+$SHELL
