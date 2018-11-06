@@ -39,11 +39,19 @@ All command are aviable for both SDKs RTOS and NONOS(non os).
  6. All things the `run` command does
 
 
-# USAGE
+## USAGE
 
 Simple run `./dev.sh` without argument to see all avail options.
 
 
-# HINTS
+## HINTS
 
 Add `$PS1_EXPAND` anywhere to your shell PROMPT/PS1 in your local `.bashrc` or `.zshrc`. This will show you in indicator, when developing :) .
+
+
+## License
+This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
+
+
+## Author Information
+- [Markus Mroch (Mr. Pi)](https://github.com/Mr-Pi) _git-contact@mr-pi.de_
