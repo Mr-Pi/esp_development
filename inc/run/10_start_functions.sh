@@ -15,3 +15,4 @@ function START_NONOS {
 	PS1_EXPAND="$( echo -e "\e[1;37m(NONOS)\e[0m " )"
 	export PS1_EXPAND
 }
+export PATH="${BASE_DIR}xtensa-lx106-elf/bin:${BASE_DIR}scripts:$PATH"
