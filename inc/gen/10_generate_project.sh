@@ -21,6 +21,7 @@ function GENERATE_PROJECT {
 		RUN_BG chmod -c -x "$PROJECT_DIR/Makefile"
 		RUN_BG chmod -c +x "$PROJECT_DIR/gen_misc.sh"
 		RUN_BG touch "$PROJECT_DIR/user/user_main.c"
+		RUN_BG touch "$PROJECT_DIR/include/user_config.h"
 	elif [ "$PROJECT_SDK" = "RTOS" ]; then
 		PROJECT_DIR="${BASE_DIR}ESP8266_RTOS_SDK/projects/$PROJECT_NAME"
 		[[ ! -f "$PROJECT_DIR/Makefile" ]] || return 0
