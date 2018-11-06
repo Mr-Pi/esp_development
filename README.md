@@ -5,6 +5,40 @@ This repository provides a simple script `dev.sh` to make the development for th
 After you cloned this repository you need to run `./dev.sh install` once to initiate the SDK and to download the official espressif toolchain.
 
 
+## What the script does
+
+All command are aviable for both SDKs RTOS and NONOS(non os).
+
+
+### install command
+
+ 1. Install the xtensa-lx106-elf-linux64 toolchain
+ 2. Initiate git submodules, if required
+ 3. Update to the latest version 3 NONOS and RTOS SDK
+ 4. Generate a symlink for python2 for the PATH environment variable, since some official simple invoke `python` not `python2`
+ 5. Fix [shebank](https://en.wikipedia.org/wiki/Shebang_(Unix)) on all python files (They use and require python2)
+ 6. Create a project directory inside of the RTOS SDK
+
+
+### run command
+
+ 1. Set the `$PATH` variable to contain the `python` symlink and the toolchain
+ 2. Set the `$IDF_PATH` variable to the selected SDK root
+ 3. Set the `$PS1_EXPAND` variable to an indicator string for the selected SDK
+ 4. Changes to the SDK root directory or the selected project(if specified via command line argument)
+ 5. Start a new shell with all variables set
+
+
+### gen command
+
+ 1. Ask for the project name if not provided via command line argument
+ 2. Generate a new directory for the new project
+ 3. Generate required directory structure for the new project
+ 4. Copy all required Makefiles and so on
+ 5. Run `git init` inside of the new create project
+ 6. All things the `run` command does
+
+
 # USAGE
 
 Simple run `./dev.sh` without argument to see all avail options.

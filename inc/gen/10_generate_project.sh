@@ -13,20 +13,24 @@ function PROJECT_NAME {
 function GENERATE_PROJECT {
 	if [ "$PROJECT_SDK" = "NONOS" ]; then
 		PROJECT_DIR="${BASE_DIR}ESP8266_NONOS_SDK/$PROJECT_NAME"
-		RUN_BG mkdir -pv "$PROJECT_DIR/include"
-		RUN_BG mkdir -pv "$PROJECT_DIR/user"
-		RUN_BG cp -Lv "${BASE_DIR}ESP8266_NONOS_SDK/examples/at/Makefile" "$PROJECT_DIR/"
-		RUN_BG cp -Lv "${BASE_DIR}ESP8266_NONOS_SDK/examples/at/user/Makefile" "$PROJECT_DIR/user"
-		RUN_BG cp -Lv "${BASE_DIR}ESP8266_NONOS_SDK/examples/at/gen_misc.sh" "$PROJECT_DIR/"
-		RUN_BG chmod -c -x "$PROJECT_DIR/Makefile"
-		RUN_BG chmod -c +x "$PROJECT_DIR/gen_misc.sh"
-		RUN_BG touch "$PROJECT_DIR/user/user_main.c"
-		RUN_BG touch "$PROJECT_DIR/include/user_config.h"
+		RUN_BG cd "$PROJECT_DIR"
+		RUN_BG mkdir -pv "./include"
+		RUN_BG mkdir -pv "./user"
+		RUN_BG cp -Lv "${BASE_DIR}ESP8266_NONOS_SDK/examples/at/Makefile" "./"
+		RUN_BG cp -Lv "${BASE_DIR}ESP8266_NONOS_SDK/examples/at/gen_misc.sh" "./"
+		RUN_BG cp -Lv "${BASE_DIR}ESP8266_NONOS_SDK/examples/at/user/Makefile" "./user"
+		RUN_BG chmod -c -x "./Makefile"
+		RUN_BG chmod -c +x "./gen_misc.sh"
+		RUN_BG touch "./user/user_main.c"
+		RUN_BG touch "./include/user_config.h"
+		RUN_BG git init
 	elif [ "$PROJECT_SDK" = "RTOS" ]; then
 		PROJECT_DIR="${BASE_DIR}ESP8266_RTOS_SDK/projects/$PROJECT_NAME"
 		[[ ! -f "$PROJECT_DIR/Makefile" ]] || return 0
 		RUN_BG cp -rv "${BASE_DIR}ESP8266_RTOS_SDK/examples/get-started/project_template/" "$PROJECT_DIR"
 		RUN_BG rm -v "$PROJECT_DIR/readme.txt"
+		RUN_BG cd "$PROJECT_DIR"
+		RUN_BG git init
 	fi
 }
 

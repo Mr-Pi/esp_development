@@ -1,4 +1,5 @@
 Starts a shell with all required environment variables exported.
+You can also specify the project to work on as last argument.
 
 You can specify which SDK should be used by following arguments:
    \e[1m-r\e[0m | \e[1m--rtos\e[0m to start and change to the ESP8266_RTOS_SDK
