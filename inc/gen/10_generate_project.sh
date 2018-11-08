@@ -13,6 +13,7 @@ function PROJECT_NAME {
 function GENERATE_PROJECT {
 	if [ "$PROJECT_SDK" = "NONOS" ]; then
 		PROJECT_DIR="${BASE_DIR}ESP8266_NONOS_SDK/$PROJECT_NAME"
+		RUN_BG mkdir -pv "$PROJECT_DIR"
 		RUN_BG cd "$PROJECT_DIR"
 		RUN_BG mkdir -pv "./include"
 		RUN_BG mkdir -pv "./user"
