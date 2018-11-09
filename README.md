@@ -7,7 +7,7 @@ After you cloned this repository you need to run `./dev.sh install` once to init
 
 ## What the script does
 
-All command are aviable for both SDKs RTOS and NONOS(non os).
+All command are available for both SDKs RTOS and NONOS(non os). For a full list of available commands simple run `./dev.sh` without arguments or `./dev.sh --help`.
 
 
 ### install command

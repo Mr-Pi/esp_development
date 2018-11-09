@@ -1,6 +1,13 @@
 # shellcheck disable=SC2154
 function PRINT_HELP_MSG {
-	[[ -z "$command" ]] || echo -e "\e[1mCommand »\e[0m $command \e[1m« not found!\e[0m\n"
+	[[ -z "$command" ]] \
+	|| case "$command" in
+		"-h" | "--help")
+			;;
+		*)
+			echo -e "\e[1mCommand »\e[0m $command \e[1m« not found!\e[0m\n"
+			;;
+	esac
 	echo -e "\e[1mUSAGE: \e[0m$0 <command> [arguments]"
 	echo ""
 	echo "       <command> can be one of:"
