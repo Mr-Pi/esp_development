@@ -8,8 +8,9 @@ function CHECKOUT_V3 {
 
 for sdk in *SDK; do
 	RUN_BG cd "$sdk"
-	find . -name '*.py' | while read -r file; do
-		git diff --exit-code --name-only "$file" &>/dev/null || RUN_BG git checkout -- "$file"
+	git status --untracked-files=no --porcelain=v1 | grep '^ M ' | cut -c4- | grep '.py$' \
+	| while read -r file; do
+		RUN_BG git checkout -- "$file"
 	done
 	CHECKOUT_V3
 	RUN_BG git pull
