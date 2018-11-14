@@ -1,6 +1,7 @@
 /log.txt
 /log_old.txt
 /xtensa-lx106-elf/
+/config.inc.sh
 # Created by https://www.gitignore.io/api/linux,vim,git,osx,python,c,c++
 # Edit at https://www.gitignore.io/?templates=linux,vim,git,osx,python,c,c++
 

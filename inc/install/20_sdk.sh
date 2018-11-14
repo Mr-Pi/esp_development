@@ -8,11 +8,13 @@ function CHECKOUT_V3 {
 
 for sdk in *SDK; do
 	RUN_BG cd "$sdk"
-	git status --untracked-files=no --porcelain=v1 | grep '^ M ' | cut -c4- | grep '.py$' \
-	| while read -r file; do
-		RUN_BG git checkout -- "$file"
-	done
-	CHECKOUT_V3
+	sdk_branch="${sdk}_BRANCH"
+	if [ -z "${!sdk_branch}" ]; then
+		CHECKOUT_V3 git checkout
+	else
+		RUN_BG git checkout "${!sdk_branch}"
+	fi
+	unset sdk_branch
 	RUN_BG git pull
 	RUN_BG cd "$BASE_DIR"
 done
