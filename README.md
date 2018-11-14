@@ -12,9 +12,9 @@ All command are available for both SDKs RTOS and NONOS(non os). For a full list 
 
 ### install command
 
- 1. Install the xtensa-lx106-elf-linux64 toolchain
+ 1. Install the xtensa-lx106-elf-linux64 toolchain, you can specify the version with the environment variable `TOOLCHAIN_VERSION` or via `TOOLCHAIN_VERSION` in `config.inc.sh`.
  2. Initiate git submodules, if required
- 3. Update to the latest version 3 NONOS and RTOS SDK
+ 3. Update to the latest version 3 NONOS and RTOS SDK or the selected branch by `*_SDK_BRANCH`, see `inc/install/15_submodule.sh` for details
  4. Generate a symlink for python2 for the PATH environment variable, since some official simple invoke `python` not `python2`
  5. Fix [shebank](https://en.wikipedia.org/wiki/Shebang_(Unix)) on all python files (They use and require python2)
  6. Create a project directory inside of the RTOS SDK
