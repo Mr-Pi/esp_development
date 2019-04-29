@@ -1,1 +1,1 @@
-source "config.inc.sh"
+[ -f "config.inc.sh" ] && source "config.inc.sh"
