@@ -1,7 +1,7 @@
 LOGIT "Update all SDK"
 
 function CHECKOUT_V3 {
-	latest_v3="$(git branch | cut -c3- | grep "3" | sort -V -r | head -n1)"
+	latest_v3="$(git branch -a | cut -c3- | sed 's/remotes\/origin\///' | grep "3" | sort -V -r | head -n1)"
 	currect_branch="$(git rev-parse --abbrev-ref HEAD)"
 	[[ "$currect_branch" = "$latest_v3" ]] || RUN_BG git checkout "$latest_v3"
 }
