@@ -8,6 +8,7 @@ function CHECKOUT_V3 {
 
 for sdk in *SDK; do
 	RUN_BG cd "$sdk"
+	git checkout -- .  # clean branch before update
 	sdk_branch="${sdk}_BRANCH"
 	if [ -z "${!sdk_branch}" ]; then
 		CHECKOUT_V3 git checkout
